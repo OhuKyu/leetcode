@@ -20,7 +20,9 @@
     Output: [0,1]
 */
 
-//Ý tưởng thuật toán: Có dãy array là nums = [2,7,11,15] thì ta thấy
+//Ý tưởng thuật toán: Có dãy array là nums = [2,7,11,15] và target = 9 thì ta thấy đi từ trái sang phải thì 2+7=9 do đó
+// i sẽ là vị trí đầu tiên của mảng là 2 và j sẽ nằm ở vị trí tiếp theo của mảng là 7 sẽ là j = i + 1, nếu kết thúc mảng mà không tìm được
+// kết quả thì sẽ trả về null, nếu tìm thấy kết quả thì sẽ trả về vị trí của phẩn tử đó trong mảng [i = 0 và j=1]
 
 package problems;
 
