@@ -26,14 +26,39 @@
 
 package problems;
 
+// public class TwoSum {
+//     public int[] twoSum(int[] nums, int target) {
+//         int n = nums.length;
+//         for(int i = 0; i < n; i++){
+//             for(int j = i + 1; j < n; j++){
+//                 if(nums[i] + nums[j] == target) {
+//                     return new int[]{i,j};
+//                 }
+//             }
+//         }
+//         return null;
+//     }
+// }
+
+//Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+// giảm độ phức tạp của thuật toán ít hơn O(n2)
+// Ý tưởng: Sử dụng Map để duyệt qua các phần tử có trong mảng sau đó trừ với target
+//Kiểm tra nếu số còn thiếu đó đã có trong map chưa.
+//Nếu có thì sẽ trả về map.get[số cần],i
+//Nếu chưa thì lưu lại dưới dạng nums[i]
+
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        int n = nums.length;
-        for(int i = 0; i < n; i++){
-            for(int j = i + 1; j < n; j++){
-                if(nums[i] + nums[j] == target) {
-                    return new int[]{i,j};
-                }
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++) {
+            int kq = target - nums[i];
+
+            if(map.containsKey(kq)) {
+                return new int[]{map.get(kq),i};
+            }
+            else {
+                map.put(nums[i], i);
             }
         }
         return null;
